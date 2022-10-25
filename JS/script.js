@@ -16,16 +16,35 @@ PROCEDIMENTO ES 1
 */
 
 //soluzione con INCLUDES
+//BONUS
 
-// let inputArray = ['basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
-// let inputEmail = prompt('inserisci la tua mail:')
+let inputEmail = document.querySelector('.htmlmail')
+let btnConferma = document.querySelector('.conferma')
+let Risultato = document.querySelector('.risultatomail')
+// let Risultato2 = document.querySelector('.risultatomail2')
+
+let inputArray = ['basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
 
 
-// if (inputArray.includes(inputEmail)){
-//     console.log('email presente')
-// } else {
-//     console.log('email NON presente')
-// }
+
+
+
+btnConferma.addEventListener('click', function(){
+    
+    if (inputArray.includes(inputEmail)){
+        console.log('email presente')
+        Risultato.innerHTML = 'CORRETTO <i class="fa-solid fa-square-check"></i>'
+
+    } else {
+        console.log('email NON presente')
+        Risultato.innerHTML = 'SBAGLIATO <i class="fa-solid fa-triangle-exclamation"></i>'
+    }
+
+
+    
+})
+
+
 
 
 
@@ -63,28 +82,26 @@ PROCEDIMENTO ES 2
 
 */
 
-// let computer = [1,2,3,4,5,6]
-// let player = [1,2,3,4,5,6]
+// function computer(max) {
+//     return Math.floor(Math.random(1) * max);
+// }
+// function player(max) {
+//     return Math.floor(Math.random(2) * max);
+// }
 
-function computer(max) {
-    return Math.floor(Math.random() * max);
-}
-function player(max) {
-    return Math.floor(Math.random() * max);
-}
+// // computer
+// console.log('il PC ha fatto:' + computer(7));
 
-// computer
-console.log(computer(7));
+// // player 
+// console.log('il PLAYER ha fatto:' + player(7));
 
-// player 
-console.log(player(7));
 
-if ( console.log(computer) > console.log(player)) {
-    console.log ('ha vinto il player')
-} else {
-    console.log ('ha vinto il pc')
-}
-    
-
+// if ( Math.random(2) === Math.random(1)){
+//     console.log('pareggio')
+// } else if ( Math.random(2) > Math.random(1)){
+//     console.log('quindi ha vinto il PLAYER')
+// } else {
+//     console.log('quindi ha vinto il PC')
+// }
 
 
