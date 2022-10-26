@@ -15,70 +15,36 @@ PROCEDIMENTO ES 1
 
 */
 
-//soluzione con INCLUDES
 //BONUS
 
-let inputEmail = document.getElementById('.mail')
-let btnConferma = document.querySelector('.conferma')
-let risultato1 = document.querySelector('.risultatomail1')
-let risultato2 = document.querySelector('.risultatomail2')
+let inputEmail = document.getElementById('mail')
+let btnConferma = document.querySelector('conferma')
+let risultato1 = document.querySelector('risultatomail1')
+let risultato2 = document.querySelector('risultatomail2')
 
 let inputArray = ['1','basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
 
 
+btnConferma.addEventListener('click', function(event){
+    event.preventDefault()
 
+    const inputEmail = inputEmail.value
+    let emailfound = false
 
-btnConferma.addEventListener('click', function(){
-    
-    if (inputArray.includes(inputEmail)){
-        console.log('email presente')
-        risultato1.innerHTML = 'CORRETTO'
-    } else {
-        console.log('email NON presente')
-        risultato2.innerHTML = 'SBAGLIATO'
-    }   
-})
-
-// non funziona il CORRETTO, nel precedente push, quello senza gli innher e senza la function funziona tutto, come mai? 
-
-//SOLUZIONE CHE FUNZIONA SENZA HINNER
-
-
-
-let inputArray2 = ['basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
-let inputEmail2 = prompt('inserisci la tua mail:')
-
-
-if (inputArray2.includes(inputEmail2)){
-    console.log('email presente')
-} else {
-    console.log('email NON presente')
-}
-
-
-
-
-
-
-
-
-/*
-soluzione con il FOR (che non restituisce nulla se la mail non ne fa parte)
-
-let inputArray2 = ['basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
-let inputEmail2 = prompt('inserisci la tua mail:')
-
-for ( let i = 0; i < inputArray2.length ; i++) {
-
-    if (inputEmail2 === inputArray2[i]){
-        console.log ('email presente')
-    } 
-
-    else {
-        console.log('email NON presente')
+    for (let i = 0; i < inputArray.length; i++){
+        if (inputEmail === inputArray[i]){
+            console.log('email presente')
+            emailfound = true
+        } 
     }
-}
-*/
+
+    if (emailfound) {
+        risultato1.innerHTML = 'email trovata'
+    } else {
+        risultato1.innerHTML = 'email NON trovata'
+    }
+
+})
 
 
 /*
@@ -98,7 +64,7 @@ PROCEDIMENTO ES 2
 
 */
 
-
+// /*
 
 function computer(max) {
     return Math.floor(Math.random(1) * max);
@@ -122,4 +88,5 @@ if ( Math.random(2) === Math.random(1)){
     console.log('quindi ha vinto il PC')
 }
 
+// */
 
