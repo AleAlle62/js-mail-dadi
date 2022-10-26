@@ -15,36 +15,18 @@ PROCEDIMENTO ES 1
 
 */
 
-//BONUS
 
-let inputEmail = document.getElementById('mail')
-let btnConferma = document.querySelector('conferma')
-let risultato1 = document.querySelector('risultatomail1')
-let risultato2 = document.querySelector('risultatomail2')
+//soluzione con INCLUDES
 
-let inputArray = ['1','basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
+let inputArray = ['basketallegrini@gmail.com', 'alessio.allegrinia@gmail.com', 'a.allegrini2@gmail.com']
+let inputEmail = prompt('inserisci la tua mail:')
 
 
-btnConferma.addEventListener('click', function(event){
-    event.preventDefault()
-
-    const inputEmail = inputEmail.value
-    let emailfound = false
-
-    for (let i = 0; i < inputArray.length; i++){
-        if (inputEmail === inputArray[i]){
-            console.log('email presente')
-            emailfound = true
-        } 
-    }
-
-    if (emailfound) {
-        risultato1.innerHTML = 'email trovata'
-    } else {
-        risultato1.innerHTML = 'email NON trovata'
-    }
-
-})
+if (inputArray.includes(inputEmail)){
+    console.log('email presente')
+} else {
+    console.log('email NON presente')
+}
 
 
 /*
